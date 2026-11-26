@@ -1,0 +1,45 @@
+/* ==========================================================================
+   GreenBasket – rtl.css
+   Right-to-left adjustments for Arabic / Hebrew.
+   How RTL works in this template:
+     1. main.js sets <html dir="rtl" lang="ar|he"> when RTL is chosen.
+     2. main.js swaps Bootstrap's stylesheet to bootstrap.rtl.min.css
+        (the <link id="bootstrap-css"> element) so .ms-*, .me-*, .text-start,
+        dropdowns and offcanvas mirror correctly.
+     3. Custom components mostly use logical properties (inset-inline-*,
+        margin-inline-*), so only the rules below need explicit mirroring.
+   ========================================================================== */
+
+[dir="rtl"] body { font-family: "Inter", "Noto Sans Arabic", "Noto Sans Hebrew", system-ui, sans-serif; }
+
+/* Directional icons: arrows and chevrons point the other way */
+[dir="rtl"] .bi-arrow-right, [dir="rtl"] .bi-arrow-left,
+[dir="rtl"] .bi-chevron-right, [dir="rtl"] .bi-chevron-left,
+[dir="rtl"] .bi-arrow-right-short, [dir="rtl"] .bi-box-arrow-right,
+[dir="rtl"] .bi-arrow-up-right { display: inline-block; transform: scaleX(-1); }
+[dir="rtl"] .link-arrow:hover i { transform: scaleX(-1) translateX(3px); }
+
+/* Select arrows sit on the left */
+[dir="rtl"] .topbar-select { padding: .25rem .25rem .25rem 1.4rem; background-position: left .2rem center; }
+
+/* Nav underline anchors are symmetrical; mega-menu aligns to the right edge */
+[dir="rtl"] .mega-menu { text-align: right; }
+
+/* Tracker progress grows from the right */
+[dir="rtl"] .tracker .progress-line { inset-inline-start: 10%; }
+
+/* Breadcrumb divider */
+[dir="rtl"] .breadcrumb-item + .breadcrumb-item::before { float: right; padding-left: var(--bs-breadcrumb-item-padding-x); padding-right: 0; }
+
+/* Tables and numbers stay readable */
+[dir="rtl"] .price, [dir="rtl"] .line-total, [dir="rtl"] .plan-price { direction: rtl; }
+[dir="rtl"] input[type="email"], [dir="rtl"] input[type="tel"] { direction: ltr; text-align: right; }
+
+/* Admin layout mirror */
+[dir="rtl"] .admin-sidebar { border-left: 1px solid var(--gb-border); border-right: 0; }
+
+/* Toast close button & swipe direction */
+[dir="rtl"] .gb-toast { flex-direction: row; }
+
+/* Phone numbers, emails and codes keep left-to-right order inside RTL text */
+[dir="rtl"] a[href^="tel:"], [dir="rtl"] a[href^="mailto:"], [dir="rtl"] code, [dir="rtl"] .coupon-code { direction: ltr; unicode-bidi: isolate; }

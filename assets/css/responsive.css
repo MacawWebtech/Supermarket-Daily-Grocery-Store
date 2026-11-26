@@ -1,0 +1,547 @@
+/* ==========================================================================
+   GreenBasket – responsive.css
+   Mobile-first breakpoints used by the template's custom components:
+     Mobile ........ < 640px   (base styles in style.css)
+     Tablet ........ 640px – 1023px
+     Desktop ....... 1024px – 1279px
+     Large desktop . >= 1280px
+   Bootstrap's own grid breakpoints (sm/md/lg/xl) still apply to .row/.col-*.
+   ========================================================================== */
+
+/* ---------- Mobile (< 640px) ------------------------------------------- */
+@media (max-width: 639.98px) {
+  .section { padding: 3rem 0; }
+  .section-sm { padding: 2.25rem 0; }
+  .topbar .hide-sm { display: none !important; }
+  .topbar .container { justify-content: center; }
+  .header-main { gap: .5rem; min-height: 64px; }
+  .brand { font-size: 1.15rem; }
+  .brand-mark { width: 36px; height: 36px; font-size: 1.1rem; }
+  .header-action .label { display: none; }
+  .header-action { padding: .4rem; min-width: 40px; }
+  .header-actions { gap: 0; }
+  .site-header .header-main .theme-toggle { display: none; } /* theme toggle moves into the mobile menu */
+  .hero-badge.b1 { inset-inline-start: 8px; bottom: 10px; }
+  .hero-badge.b2 { inset-inline-end: 8px; top: 10px; }
+  .hero-badge { padding: .55rem .7rem; }
+  .hero-badge .ic { width: 36px; height: 36px; font-size: 1.05rem; }
+  .discount-circle { width: 76px; height: 76px; font-size: .8rem; }
+  .discount-circle span { font-size: 1.25rem; }
+  .float-card { width: 210px; }
+  .float-card.f1 { top: 6%; inset-inline-start: 4%; }
+  .float-card.f2 { bottom: 6%; inset-inline-end: 4%; }
+  .promo-banner { padding: 2.25rem 1.25rem; }
+  .promo-banner::before { background: rgba(14, 38, 20, .8) !important; }
+  .newsletter, .offer-banner { padding: 2.25rem 1.25rem; }
+  .newsletter-form { flex-direction: column; border-radius: var(--gb-radius); }
+  .newsletter-form .btn { width: 100%; }
+  .cart-item { grid-template-columns: 72px 1fr; }
+  .cart-item img { width: 72px; height: 72px; }
+  .cart-item .right { grid-column: 1 / -1; justify-content: space-between; }
+  .list-view .product-card { flex-direction: column; }
+  .list-view .product-media { width: 100%; aspect-ratio: 1; min-height: 0; }
+  .tracker { grid-template-columns: 1fr; gap: 0; }
+  .tracker::before, .tracker .progress-line { display: none; }
+  .track-step { display: grid; grid-template-columns: 54px 1fr; gap: 1rem; text-align: start; align-items: center; padding-bottom: 1.25rem; position: relative; }
+  .track-step:not(:last-child)::after { content: ""; position: absolute; inset-inline-start: 25px; top: 54px; bottom: 0; width: 4px; background: var(--gb-border); }
+  .track-step.done:not(:last-child)::after { background: var(--gb-primary); }
+  .track-step .dot { margin: 0; }
+  .list-row { grid-template-columns: 44px 1fr; }
+  .list-row img { width: 44px; height: 44px; }
+  .list-row .qty, .list-row .row-actions { grid-column: 2; }
+  .countdown div { min-width: 72px; }
+  .countdown strong { font-size: 1.7rem; }
+  .about-collage .exp { padding: .7rem .9rem; }
+  .info-list li { flex-direction: column; gap: .1rem; }
+  .table-responsive-stack thead { display: none; }
+  .table-responsive-stack tr { display: block; border-bottom: 1px solid var(--gb-border); padding: .5rem 0; }
+  .table-responsive-stack td { display: flex; justify-content: space-between; gap: 1rem; border: 0; padding: .4rem 1rem; text-align: end; }
+  .table-responsive-stack td::before { content: attr(data-label); font-weight: 600; color: var(--gb-heading); text-align: start; }
+}
+
+/* ---------- Tablet and up (>= 640px) ------------------------------------ */
+@media (min-width: 640px) {
+  .hero-2 .hero-copy { padding: 4rem 2rem; }
+  .auth-form { padding: 3rem 2rem; }
+}
+
+/* ---------- Below desktop (< 1024px): compact header -------------------- */
+@media (max-width: 1023.98px) {
+  .main-nav, .header-search-desktop, .topbar .hide-md { display: none !important; }
+  .header-search-mobile { display: block; padding-bottom: .75rem; }
+  .header-search-mobile .header-search { max-width: none; }
+  .header-search-mobile .form-select { display: none; }
+  .site-header { position: sticky; }
+  .summary-card { position: static; }
+  .shop-sidebar.offcanvas-lg { background: var(--gb-surface); }
+}
+
+/* ---------- Desktop (>= 1024px) ----------------------------------------- */
+@media (min-width: 1024px) {
+  .header-search-mobile, .mobile-only { display: none !important; }
+  .hero-1 { padding: 4.5rem 0 5.5rem; }
+  .hero-2 { grid-template-columns: 1fr 1fr; min-height: 640px; }
+  .hero-2 .hero-copy { padding: 4rem 3rem 4rem max(3rem, var(--gb-gutter)); }
+  [dir="rtl"] .hero-2 .hero-copy { padding: 4rem max(3rem, var(--gb-gutter)) 4rem 3rem; }
+  .hero-2 .hero-copy-inner { margin-inline: 0; }
+  .hero-2 .hero-photo { min-height: 100%; }
+  .auth-wrap { grid-template-columns: 1.05fr 1fr; }
+  .auth-visual { display: block; }
+  .dash-layout { grid-template-columns: 270px 1fr; align-items: start; }
+  .dash-sidebar { position: sticky; top: calc(var(--gb-header-h) + 64px); }
+  .promo-banner { padding: 4rem 3.5rem; }
+  .offer-banner { padding: 3rem 3.5rem; }
+  .newsletter { padding: 3.5rem; }
+}
+
+/* ---------- Large desktop (>= 1280px) ----------------------------------- */
+@media (min-width: 1280px) {
+  .product-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+  .product-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+}
+
+/* Shop grid with sidebar: keep 3 comfortable columns on large screens */
+@media (min-width: 1024px) {
+  .shop-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 640px) and (max-width: 1023.98px) {
+  .shop-grid, .product-grid.cols-4, .product-grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 820px) and (max-width: 1023.98px) {
+  .product-grid.cols-4, .product-grid.cols-5 { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Print: keep receipts/confirmation readable */
+@media print {
+  .topbar, .site-header, .site-footer, .back-to-top, .toast-stack, .no-print { display: none !important; }
+  body { background: #fff; }
+}
+
+/* ==========================================================================
+   Header alignment fixes (mobile + tablet)
+   - the header row used to be wider than the screen (too many icons + 1.5rem
+     gaps), which pushed the whole page sideways
+   ========================================================================== */
+html, body { max-width: 100%; overflow-x: clip; }
+.header-main > * { min-width: 0; }
+.header-actions, .header-main > .brand, .header-main > button { flex-shrink: 0; }
+
+/* Everything below desktop */
+@media (max-width: 1023.98px) {
+  .header-main { gap: .6rem; min-height: 64px; }
+  .header-actions { gap: .1rem; }
+  .header-action .label { display: none !important; }
+  .header-action { padding: .4rem; min-width: 40px; }
+  /* hamburger must stay visible between 992px and 1023px (Bootstrap hides d-lg-none at 992) */
+  .site-header .header-main > button.d-lg-none { display: inline-flex !important; }
+}
+
+/* Tablet (640px – 1023px): icon-only RTL button keeps one tidy row */
+@media (min-width: 640px) and (max-width: 1023.98px) {
+  .header-action.rtl-toggle .rtl-label { display: none; }
+  .brand { font-size: 1.3rem; }
+}
+
+/* Phones (< 640px): hamburger | logo | wishlist | cart
+   (RTL, theme and account live in the slide-out menu) */
+@media (max-width: 639.98px) {
+  .header-main { gap: .35rem; }
+  .brand { font-size: 1.1rem; gap: .45rem; flex: 1 1 auto; min-width: 0; overflow: hidden; }
+  .brand > span:not(.brand-mark) { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .brand-mark { width: 34px; height: 34px; font-size: 1.05rem; flex-shrink: 0; }
+  .site-header .header-main .theme-toggle,
+  .site-header .header-main .rtl-toggle,
+  .site-header .header-main .header-actions a[href$="login.html"] { display: none !important; }
+  .header-actions { margin-inline-start: 0; }
+  .header-search-mobile { padding-bottom: .6rem; }
+  .topbar .container { gap: .5rem; padding-block: .25rem; }
+}
+
+
+/* ==========================================================================
+   Alignment fixes: testimonials, blog, categories, footer
+   ========================================================================== */
+
+/* ---- Tablet (768-991px): 2-column grids with an odd last card -> centre it ---- */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .row > .col-md-6.col-lg-4:last-child:nth-child(odd) { margin-inline: auto; }
+  .testimonial-card { padding: 1.75rem 1.5rem 1.4rem; }
+  .testimonial-card p { font-size: 1rem; line-height: 1.7; }
+}
+
+/* Cards in a row always share one height; footers/links stay pinned to the bottom */
+.testimonial-card, .blog-card { height: 100%; }
+.testimonial-card .person { margin-top: auto; }
+.testimonial-card .person > span { display: flex; flex-direction: column; min-width: 0; }
+.blog-card .thumb { flex: 0 0 auto; }
+.blog-card .body h3 { min-height: 2.9em; }          /* 2-line titles keep text rows level */
+.blog-card .body p { flex: 1 1 auto; margin-bottom: 1rem; }
+.blog-meta { gap: .35rem .9rem; align-items: center; }
+.blog-meta span { display: inline-flex; align-items: center; white-space: nowrap; }
+
+/* ---- Mobile (< 576px): everything one-by-one ---- */
+@media (max-width: 575.98px) {
+  /* categories: one card per row, image left / text right */
+  .row > .col-6:has(> .category-card) { flex: 0 0 100%; max-width: 100%; width: 100%; }
+  .category-card { display: flex; align-items: center; text-align: start; }
+  .category-card .thumb { flex: 0 0 38%; max-width: 150px; aspect-ratio: 4/3; }
+  .category-card .body { flex: 1 1 auto; padding: .75rem 1rem; }
+  .category-card h3 { font-size: 1.05rem; }
+
+  .testimonial-card { padding: 1.5rem 1.25rem 1.25rem; }
+  .blog-card .body h3 { min-height: 0; }
+}
+
+/* ---- Footer ---- */
+.site-footer .footer-col h2 { margin-bottom: 1rem; }
+.footer-links a { line-height: 1.4; }
+.footer-contact li { align-items: flex-start; overflow-wrap: normal; word-break: normal; }
+.footer-contact li i { flex: 0 0 1.1rem; width: 1.1rem; text-align: center; margin-top: .2rem; }
+.footer-contact li > span, .footer-contact li > a { flex: 1 1 auto; min-width: 0; line-height: 1.5; }
+.footer-contact li > a[href^="mailto"] { overflow-wrap: anywhere; }
+.footer-bottom { text-align: start; }
+
+/* Tablet: brand full width, three link lists in one row, contact in two columns */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .site-footer .footer-col-brand p { max-width: 560px; }
+  .footer-col-contact .footer-contact { display: grid; grid-template-columns: 1fr 1fr; gap: .25rem 1.5rem; }
+}
+
+/* Mobile: Quick links | Support side by side, categories in 2 columns, contact full width */
+@media (max-width: 767.98px) {
+  .site-footer { padding-top: 3rem; }
+  .footer-col-cats .footer-links { columns: 2; column-gap: 1.5rem; }
+  .footer-col-cats .footer-links li { break-inside: avoid; }
+  .footer-col-contact .footer-contact li { margin-bottom: .9rem; }
+  .footer-bottom { justify-content: center !important; text-align: center; }
+  .footer-bottom .pay-icons { justify-content: center; }
+  .back-to-top { bottom: 1rem; inset-inline-end: 1rem; width: 44px; height: 44px; }
+  .site-footer { padding-bottom: 4rem; }
+}
+
+
+/* ==========================================================================
+   Round 2: category tiles + centred section headings (tablet & mobile)
+   ========================================================================== */
+
+/* ---- Category tiles: 4-up only on desktop, 2-up on tablet, 1-up on mobile ---- */
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .cat-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .cat-tile .info strong { font-size: 1rem; }
+}
+@media (min-width: 992px) {
+  .cat-tiles { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+.cat-tile .info strong { overflow-wrap: normal; word-break: normal; }
+@media (max-width: 575.98px) {
+  .cat-tiles { grid-template-columns: 1fr; gap: .75rem; }
+  .cat-tile { flex-direction: row; text-align: start; padding: .75rem 1rem .75rem .75rem; }
+  .cat-tile .go { display: grid; }
+  .cat-tile .thumb { width: 72px; height: 72px; }
+}
+
+/* ---- Section headings: eyebrow, heading, paragraph (and link/button) centred below 992px ---- */
+@media (max-width: 991.98px) {
+  .section-head,
+  .section-head-row > div,
+  .section-head-row { text-align: center; }
+  .section-head-row { justify-content: center; align-items: center; flex-direction: column; gap: .9rem; }
+  .section-head p,
+  .section-head-row p { margin-inline: auto; }
+  .section-head-row .link-arrow { justify-content: center; }
+
+  /* "Browse by category" style headings */
+  #pills-title { text-align: center; }
+
+  /* split heading columns (Reviews, FAQs, Weekly specials, etc.) */
+  .row > .col-lg-4:has(> .eyebrow),
+  .row > .col-lg-4:has(> h2 + p),
+  .row > .col-lg-5:has(> .eyebrow),
+  .row > .col-lg-6:has(> .eyebrow + h2) { text-align: center; }
+  .row > .col-lg-4 > .eyebrow + h2 + p,
+  .row > .col-lg-4 > .eyebrow + h2 { margin-inline: auto; }
+  .row > .col-lg-4 > .eyebrow { margin-inline: auto; }
+}
+
+
+/* ---- Shop filters (desktop): keep the sidebar pinned so no blank gap is left beside the product grid ---- */
+@media (min-width: 992px) {
+  .shop-sidebar.offcanvas-lg .offcanvas-body { background: var(--gb-surface); }
+  .shop-sidebar .card-gb { margin-bottom: 0; }
+}
+
+
+/* ---- Embedded Google Maps ---- */
+.map-embed { position: relative; border-radius: var(--gb-radius); overflow: hidden; border: 1px solid var(--gb-border); min-height: 340px; background: var(--gb-surface-2); }
+.map-embed iframe { display: block; width: 100%; height: 100%; min-height: 340px; border: 0; }
+.map-embed .map-open { position: absolute; inset-block-end: 12px; inset-inline-start: 12px; box-shadow: var(--gb-shadow); }
+@media (max-width: 575.98px) { .map-embed, .map-embed iframe { min-height: 280px; } }
+
+/* ---- FAQ side column: heading + help card fill the left column; stays in view while answers open ---- */
+.faq-help { background: var(--gb-surface); border: 1px solid var(--gb-border); border-radius: var(--gb-radius); padding: 1.5rem; margin-top: 1.75rem; box-shadow: var(--gb-shadow-sm); }
+.faq-help .icon-box { display: inline-grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; background: var(--gb-accent); color: var(--gb-primary-text); font-size: 1.35rem; margin-bottom: .9rem; }
+.faq-help h3 { margin-bottom: .35rem; }
+.faq-help p { font-size: .95rem; margin-bottom: 1rem; }
+.faq-help-list { list-style: none; padding: 0; margin: 0 0 1.25rem; }
+.faq-help-list li { display: flex; align-items: flex-start; gap: .65rem; padding: .55rem 0; border-top: 1px solid var(--gb-border); overflow-wrap: anywhere; }
+.faq-help-list li:first-child { border-top: 0; }
+.faq-help-list i { color: var(--gb-primary-text); margin-top: .2rem; }
+@media (min-width: 992px) { .faq-side { position: sticky; top: calc(var(--gb-header-h) + 16px); } }
+@media (max-width: 991.98px) { .faq-side { text-align: center; } .faq-help { text-align: start; max-width: 520px; margin-inline: auto; } .faq-side .eyebrow { margin-inline: auto; } }
+
+
+/* ==========================================================================
+   Delivery page: info cards + zone table
+   ========================================================================== */
+
+/* Check lists: text flows as normal inline text (bold / links / prices no longer become separate flex items) */
+.check-list li { position: relative; display: block; padding-inline-start: 1.7rem; margin-bottom: .7rem; line-height: 1.55; }
+.check-list li::before { position: absolute; inset-inline-start: 0; top: .05em; line-height: 1.55; }
+.check-list li:last-child { margin-bottom: 0; }
+.check-list li > strong, .check-list li > span, .check-list li > a { display: inline; }
+
+/* Card headings: icon + title on one tidy line, equal heights across the pair */
+.card-gb > h2.h4:has(> i) { display: flex; align-items: center; gap: .6rem; margin-bottom: 1.1rem; line-height: 1.25; }
+.card-gb > h2.h4 > i { flex: 0 0 auto; font-size: 1.35rem; line-height: 1; }
+
+/* Zone table (desktop / tablet): even columns, headings may wrap, codes and fees never split */
+.zone-table { table-layout: auto; }
+.zone-table thead th { white-space: normal; padding: .8rem .75rem; vertical-align: middle; line-height: 1.3; }
+.zone-table td { padding: .85rem .75rem; }
+.zone-table td[data-label="PIN codes"], .zone-table td[data-label="Delivery fee"],
+.zone-table td[data-label="Minimum order"] { white-space: nowrap; }
+.zone-table td[data-label="Zone"] { min-width: 130px; }
+
+/* Zone table (mobile + small tablet): one card per zone, stacked one by one */
+@media (max-width: 767.98px) {
+  .card-gb:has(> .table-responsive > .zone-table) { background: transparent; border: 0; box-shadow: none; overflow: visible !important; }
+  .zone-table, .zone-table tbody { display: block; width: 100%; }
+  .zone-table thead { display: none; }
+  .zone-table tr { display: block; background: var(--gb-surface); border: 1px solid var(--gb-border); border-radius: var(--gb-radius); overflow: hidden; margin-bottom: .9rem; padding: 0; box-shadow: var(--gb-shadow-sm); }
+  .zone-table td { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .7rem 1rem; text-align: end; border: 0; border-top: 1px solid var(--gb-border); white-space: normal !important; min-width: 0 !important; }
+  .zone-table td::before { content: attr(data-label); font-weight: 600; color: var(--gb-text); font-size: .85rem; text-align: start; flex: 0 0 auto; }
+  .zone-table td[data-label="Zone"] { background: var(--gb-accent); border-top: 0; justify-content: flex-start; text-align: start; padding: .85rem 1rem; }
+  .zone-table td[data-label="Zone"]::before { display: none; }
+  .zone-table td[data-label="Zone"] strong { font-family: var(--gb-font-heading); font-size: 1.02rem; }
+}
+
+/* Delivery slot chips: one per row on phones */
+@media (max-width: 575.98px) {
+  .row > .col-6.col-md-4.col-lg:has(> .card-gb.text-center) { flex: 0 0 100%; max-width: 100%; width: 100%; }
+  .card-gb.text-center.py-3:has(> small) { display: flex; align-items: center; justify-content: flex-start; gap: .75rem; padding-inline: 1.1rem; text-align: start !important; }
+  .card-gb.text-center.py-3 > strong { margin: 0 !important; }
+  .card-gb.text-center.py-3 > small { margin-inline-start: auto; }
+}
+
+
+/* ==========================================================================
+   Round 5: team, blog meta, 1024px header, pricing, table scrollbars
+   ========================================================================== */
+
+/* ---- 1. Team (about): one member per row on phones ---- */
+@media (max-width: 575.98px) {
+  .row > .col-6.col-lg-3:has(> .team-card) { flex: 0 0 100%; max-width: 100%; width: 100%; }
+  .team-card .photo { max-width: 300px; margin-inline: auto; margin-bottom: 1rem; }
+}
+
+/* ---- 2. Blog cards: identical meta rows so titles, text and links line up ---- */
+@media (min-width: 576px) and (max-width: 1199.98px) {
+  .blog-card .blog-meta { row-gap: .3rem; min-height: calc(2 * 1.5em + .3rem); align-content: flex-start; line-height: 1.5; }
+  .blog-card .blog-meta span:nth-child(3) { flex-basis: 100%; }   /* date + author on line 1, read time on line 2 – for every card */
+}
+.blog-card .body h3 { line-height: 1.3; }
+.blog-card .body p { margin-bottom: 1rem; }
+
+/* ---- 3. Header at 992-1199px (e.g. 1024): keep the nav on ONE line ---- */
+.nav-links > li > a, .nav-links > li > button, .nav-extra a, .cat-toggle { white-space: nowrap; }
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .main-nav .container { gap: .5rem; }
+  .cat-toggle { min-width: 0; padding: .8rem 1rem; font-size: .95rem; }
+  .nav-links { gap: 0; }
+  .nav-links > li > a, .nav-links > li > button { padding: .95rem .6rem; font-size: .95rem; }
+  .nav-links > li > a::after, .nav-links > li > button::after { left: .6rem; right: .6rem; }
+  .nav-extra { display: none; }                      /* Track order / Membership live in the footer + mobile menu */
+  .header-main { gap: .9rem; }
+  .header-search { max-width: 100%; }
+  .header-actions { gap: .15rem; flex-shrink: 0; }
+  .header-action { padding: .4rem; }
+  .header-action .rtl-label { display: none; }
+}
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .nav-links > li > a, .nav-links > li > button { padding-inline: .7rem; }
+  .nav-extra { gap: .9rem; font-size: .88rem; }
+}
+
+/* ---- 4. Pricing plans on tablet: odd third plan is centred, cards equal height ---- */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .row.align-items-stretch > .col-md-6.col-lg-4:last-child:nth-child(odd) { margin-inline: auto; }
+}
+
+/* ---- 5. No inner scrollbars on tables (desktop, tablet, mobile) ---- */
+.table-responsive { overflow-y: hidden; scrollbar-width: none; }
+.table-responsive::-webkit-scrollbar { display: none; width: 0; height: 0; }
+.table-responsive > .compare-table { overflow: hidden; }
+.compare-table { margin-bottom: 0; }
+@media (max-width: 767.98px) {
+  /* compare table: one block per benefit on phones / small tablets */
+  .compare-table thead { display: none; }
+  .compare-table, .compare-table tbody { display: block; width: 100%; }
+  .compare-table tr { display: block; border-bottom: 1px solid var(--gb-border); padding: .6rem 0; }
+  .compare-table tr:last-child { border-bottom: 0; }
+  .compare-table td, .compare-table th[scope="row"] { display: flex; align-items: center; justify-content: space-between; gap: 1rem; border: 0; padding: .35rem 1rem; text-align: end; }
+  .compare-table th[scope="row"], .compare-table td:first-child { justify-content: flex-start; text-align: start; font-weight: 600; color: var(--gb-heading); padding-top: .5rem; }
+  .compare-table td[data-label]::before { content: attr(data-label); font-weight: 500; color: var(--gb-text); text-align: start; }
+  .compare-table td:first-child::before { display: none; }
+}
+
+
+/* ==========================================================================
+   Shop filters – tablet & mobile off-canvas panel
+   ========================================================================== */
+@media (max-width: 991.98px) {
+  .shop-sidebar.offcanvas-lg {
+    --bs-offcanvas-width: min(400px, 90vw);
+    background: var(--gb-surface); display: flex; flex-direction: column;
+  }
+  .shop-sidebar.offcanvas-lg .offcanvas-header {
+    flex: 0 0 auto; display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 1.25rem; border-bottom: 1px solid var(--gb-border); background: var(--gb-surface);
+  }
+  .shop-sidebar.offcanvas-lg .offcanvas-title { margin: 0; font-size: 1.15rem; }
+  .shop-sidebar.offcanvas-lg .btn-close { margin: 0; padding: .6rem; }
+  .shop-sidebar.offcanvas-lg .offcanvas-body {
+    flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain;
+    padding: 0 1.25rem 1.25rem; -webkit-overflow-scrolling: touch;
+  }
+  /* the inner card should look like part of the panel, not a card inside a card */
+  .shop-sidebar.offcanvas-lg .card-gb { border: 0; box-shadow: none; border-radius: 0; background: transparent; padding: 0; }
+  .shop-sidebar .filter-block { padding: 1.1rem 0; }
+  .shop-sidebar .filter-block:first-child { padding-top: 1.1rem; }
+  .shop-sidebar .filter-block h3, .shop-sidebar fieldset legend { font-size: 1rem; margin-bottom: .75rem; }
+  .shop-sidebar .filter-cats button { padding: .65rem .8rem; min-height: 44px; }
+  .shop-sidebar .filter-cats button:hover:not(.active) { background: transparent; color: inherit; }   /* no "stuck" hover highlight on touch */
+  .shop-sidebar .filter-cats button.active:hover { background: var(--gb-primary); color: #fff; }
+  .shop-sidebar .price-inputs { display: flex; align-items: center; gap: .6rem; }
+  .shop-sidebar .price-inputs .form-control { min-width: 0; flex: 1 1 0; }
+  .shop-sidebar .form-check { min-height: 40px; display: flex; align-items: center; gap: .6rem; padding-inline-start: 0; }
+  .shop-sidebar .form-check .form-check-input { margin: 0; float: none; flex: 0 0 auto; }
+  .shop-sidebar .form-check.form-switch .form-check-input { width: 2.5em; }
+  /* Reset button stays visible at the bottom of the panel */
+  .shop-sidebar [data-reset-filters] {
+    position: sticky; bottom: 0; margin-top: 1rem !important; z-index: 2;
+    box-shadow: 0 -12px 16px -8px var(--gb-surface); min-height: 48px;
+  }
+}
+
+
+/* ---- FAQ side column (desktop): compact help card so the left column is never taller than the answers ---- */
+@media (min-width: 992px) {
+  .faq-side h2 { margin-bottom: .6rem; }
+  .faq-side > p { margin-bottom: 0; }
+  .faq-help { display: grid; grid-template-columns: 44px 1fr; column-gap: .9rem; align-items: center; padding: 1.25rem; margin-top: 1.25rem; }
+  .faq-help .icon-box { width: 44px; height: 44px; margin: 0; grid-row: 1 / span 2; font-size: 1.2rem; }
+  .faq-help h3 { margin: 0; font-size: 1.1rem; align-self: end; }
+  .faq-help > p { margin: 0; font-size: .88rem; align-self: start; }
+  .faq-help-list { grid-column: 1 / -1; margin: 1rem 0 1rem; }
+  .faq-help-list li { padding: .5rem 0; }
+  .faq-help-list li:last-child { display: none; }      /* "Replies within 2 hours" is already in the intro text */
+  .faq-help .btn { grid-column: 1 / -1; }
+}
+
+
+/* ---- Delivery info cards (Same-day / Free delivery): stacked one by one on tablet & mobile ---- */
+@media (max-width: 991.98px) {
+  .row > .col-md-6:has(> .card-gb > .check-list) { flex: 0 0 100%; max-width: 100%; width: 100%; }
+  .row > .col-md-6 > .card-gb:has(> .check-list) { height: auto; }
+  .card-gb > h2.h4:has(> i) { white-space: normal; }
+}
+
+
+/* ==========================================================================
+   Delivery zones table: never scrolls, always fits (desktop & tablet)
+   ========================================================================== */
+.table-responsive:has(> .zone-table) { overflow: visible !important; }
+.zone-table { width: 100%; }
+.zone-table thead th { font-size: .74rem; padding: .8rem .6rem; }
+.zone-table td { padding: .85rem .6rem; font-size: .93rem; }
+.zone-table th:first-child, .zone-table td:first-child { padding-inline-start: 1rem; }
+.zone-table th:last-child, .zone-table td:last-child { padding-inline-end: 1rem; }
+.zone-table td[data-label="Zone"] { min-width: 0; }
+.zone-table td[data-label="Zone"] strong { line-height: 1.3; }
+
+/* below 1200px the 7/5 split is too narrow for 5 columns: table full width, map underneath */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .row > .col-lg-7:has(.zone-table), .row > .col-lg-5:has(.map-embed) { flex: 0 0 100%; max-width: 100%; width: 100%; }
+  .row > .col-lg-5:has(.map-embed) .map-embed, .row > .col-lg-5:has(.map-embed) iframe { min-height: 380px; }
+}
+
+
+/* ---- About: "Our story" – space below the overlapping photo collage ---- */
+.about-collage { padding-bottom: 2.5rem; }                      /* room for the 2rem overhang of the small photo */
+.about-collage .img-b { bottom: 0; }
+@media (max-width: 991.98px) {
+  .about-collage { margin-bottom: 1.5rem; max-width: 560px; margin-inline: auto; }
+  .row > .col-lg-6:has(> .eyebrow + h2) { padding-top: 1rem; }
+  .row > .col-lg-6:has(> .eyebrow + h2) > .eyebrow { margin-bottom: .9rem; }
+  .row > .col-lg-6:has(> .eyebrow + h2) .row { text-align: center; }
+}
+@media (max-width: 575.98px) {
+  .about-collage { margin-bottom: 2rem; }
+  .about-collage .exp { top: 1rem; }
+}
+
+
+/* ---- About: mission / vision cards – icon centred with the centred text (tablet & mobile) ---- */
+@media (max-width: 991.98px) {
+  .row > .col-lg-6:has(> .eyebrow + h2) .card-gb { text-align: center; }
+  .row > .col-lg-6:has(> .eyebrow + h2) .card-gb .icon-box { display: grid; place-items: center; margin-inline: auto; }
+}
+
+
+/* ---- Team: single column on phones, 2-up on tablet, 4-up on desktop ---- */
+@media (max-width: 575.98px) {
+  .team-card { max-width: 320px; margin-inline: auto; }
+  .team-card .photo { width: 100%; max-width: none; margin-inline: 0; }
+  .team-card h3 { font-size: 1.15rem; }
+}
+
+
+/* ==========================================================================
+   Blog cards on tablet (576-991px): horizontal layout – photo left, text right, one card per row
+   ========================================================================== */
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .blog-card { flex-direction: row; align-items: stretch; }
+  .blog-card .thumb { flex: 0 0 42%; max-width: 42%; aspect-ratio: auto; min-height: 240px; position: relative; }
+  .blog-card .thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .blog-card .body { flex: 1 1 auto; min-width: 0; padding: 1.4rem 1.5rem; justify-content: center; }
+  .blog-card .blog-meta { min-height: 0; flex-wrap: wrap; }
+  .blog-card .blog-meta span:nth-child(3) { flex-basis: auto; }   /* meta back on one line – there is room now */
+  .blog-card .body h3 { min-height: 0; font-size: 1.2rem; }
+  .blog-card .body p { flex: 0 1 auto; margin-bottom: 1rem; }
+  .blog-card .link-arrow { margin-top: auto; align-self: flex-start; }
+}
+
+
+/* ==========================================================================
+   Header at 1024px (992-1199px): one-line navigation, nothing clipped
+   (higher-specificity copy of the earlier rules so nothing can override them)
+   ========================================================================== */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .site-header .main-nav .container { gap: .5rem; flex-wrap: nowrap; }
+  .site-header .main-nav .cat-toggle { min-width: 0; padding: .8rem 1rem; font-size: .95rem; white-space: nowrap; }
+  .site-header .main-nav .nav-links { gap: 0; flex-wrap: nowrap; min-width: 0; }
+  .site-header .main-nav .nav-links > li > a,
+  .site-header .main-nav .nav-links > li > button { padding: .95rem .6rem; font-size: .95rem; white-space: nowrap; }
+  .site-header .main-nav .nav-links > li > a::after,
+  .site-header .main-nav .nav-links > li > button::after { left: .6rem; right: .6rem; }
+  .site-header .main-nav .nav-extra { display: none !important; }
+  .site-header .header-main { gap: .9rem; flex-wrap: nowrap; }
+  .site-header .header-main .header-search-desktop { min-width: 0; }
+  .site-header .header-actions { flex-shrink: 0; gap: .15rem; }
+  .site-header .header-action .label { display: none !important; }
+  .site-header .header-action.rtl-toggle .rtl-label { display: none; }
+}
+
+
+/* ---- Top bar (black strip above the header) removed on every page ---- */
+.topbar { display: none !important; }

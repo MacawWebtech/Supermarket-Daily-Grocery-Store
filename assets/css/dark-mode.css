@@ -1,0 +1,226 @@
+/* ==========================================================================
+   GreenBasket – dark-mode.css
+   Activated by <html data-bs-theme="dark"> (set by assets/js/main.js).
+   Bootstrap 5.3 switches its own components with the same attribute; this
+   file re-maps the template's design tokens so custom components follow.
+   ========================================================================== */
+[data-bs-theme="dark"] {
+  --gb-primary: #2f9e4a;
+  --gb-primary-dark: #24843c;
+  --gb-primary-text: #5fd27c;     /* 7:1+ on the dark surfaces below */
+  --gb-primary-rgb: 47, 158, 74;
+  --gb-accent: #282828;
+  --gb-bg: #131313;
+  --gb-surface: #1c1c1c;
+  --gb-surface-2: #242424;
+  --gb-heading: #f1f1f1;
+  --gb-text: #aeaeae;
+  --gb-text-strong: #d2d2d2;
+  --gb-border: #323232;
+  --gb-sale-strong: #888888;
+  --gb-shadow-sm: 0 1px 2px rgba(0, 0, 0, .4);
+  --gb-shadow: 0 6px 20px rgba(0, 0, 0, .35);
+  --gb-shadow-lg: 0 18px 45px rgba(0, 0, 0, .5);
+
+  --bs-body-bg: var(--gb-bg);
+  --bs-body-color: var(--gb-text);
+  --bs-border-color: var(--gb-border);
+  --bs-link-color: var(--gb-primary-text);
+  --bs-link-color-rgb: 95, 210, 124;
+  --bs-secondary-bg: var(--gb-surface-2);
+  --bs-tertiary-bg: var(--gb-surface-2);
+  color-scheme: dark;
+}
+
+/* Surfaces that use fixed light colours in light mode */
+[data-bs-theme="dark"] .topbar { background: #0e0e0e; }
+[data-bs-theme="dark"] .hero-1 { background: linear-gradient(135deg, #1c1c1c 0%, #161616 55%, #161616 100%); }
+[data-bs-theme="dark"] .page-banner:not(.has-bg) { background: linear-gradient(120deg, #1e1e1e, #171717); }
+[data-bs-theme="dark"] .site-footer { background: #0e0e0e; }
+[data-bs-theme="dark"] .stats-band { background: #232323; }
+[data-bs-theme="dark"] .newsletter { background: #1d5f2d; }
+[data-bs-theme="dark"] .demo-note { background: #1d1d1d; color: #c0c0c0; border-color: #303030; }
+[data-bs-theme="dark"] .icon-box.orange { background: #212121; color: #a5a5a5; }
+[data-bs-theme="dark"] .icon-box.red { background: #2a2a2a; color: #c6c6c6; }
+[data-bs-theme="dark"] .icon-box.blue { background: #282828; color: #b8b8b8; }
+[data-bs-theme="dark"] .status-success { background: #173523; color: #7fe09a; }
+[data-bs-theme="dark"] .status-warning { background: #252525; color: #b0b0b0; }
+[data-bs-theme="dark"] .status-info { background: #282828; color: #bfbfbf; }
+[data-bs-theme="dark"] .status-danger { background: #2a2a2a; color: #cdcdcd; }
+[data-bs-theme="dark"] .status-muted { background: #2a2a2a; color: #bebebe; }
+[data-bs-theme="dark"] .form-control::placeholder { color: #868686; }
+[data-bs-theme="dark"] .newsletter-form { background: #f6f6f6; }
+[data-bs-theme="dark"] .map-placeholder { border-color: #3d3d3d; }
+[data-bs-theme="dark"] .skeleton::after { background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .06), transparent); }
+[data-bs-theme="dark"] .empty-state { border-color: #3d3d3d; }
+[data-bs-theme="dark"] .about-collage .img-b { border-color: var(--gb-bg); }
+[data-bs-theme="dark"] .btn-close { filter: invert(1) grayscale(100%) brightness(200%); }
+[data-bs-theme="dark"] .offcanvas { background: var(--gb-surface); color: var(--gb-text); }
+[data-bs-theme="dark"] .table { --bs-table-color: var(--gb-text-strong); }
+[data-bs-theme="dark"] .gb-toast { background: #2f2f2f; }
+
+/* Keep product photography natural – no dimming filters on images */
+[data-bs-theme="dark"] img { filter: none; }
+
+/* Theme toggle icon swap (both icons live in the button) */
+.theme-toggle .icon-dark { display: none; }
+[data-bs-theme="dark"] .theme-toggle .icon-dark { display: inline-block; }
+[data-bs-theme="dark"] .theme-toggle .icon-light { display: none; }
+
+/* v2: hero + benefit strip in dark mode */
+[data-bs-theme="dark"] .hero-1.hero-v2 { background: linear-gradient(135deg, #0a2414 0%, #0f3a1f 55%, #14502b 100%); }
+[data-bs-theme="dark"] .benefit-strip { background: var(--gb-surface); }
+[data-bs-theme="dark"] .benefit-item:hover { background: rgba(255,255,255,.04); }
+[data-bs-theme="dark"] .page-banner.has-bg { background: #0a2414; }
+[data-bs-theme="dark"] .testimonial-card .person img { border-color: #232323; }
+[data-bs-theme="dark"] .testimonial-card { background: linear-gradient(160deg, #232323 0%, #1d1d1d 100%); }
+[data-bs-theme="dark"] .testimonial-card p { color: #ebebeb; }
+[data-bs-theme="dark"] .testimonial-card .quote-ic { color: var(--gb-primary-text); opacity: .2; }
+@media (min-width: 992px) { [data-bs-theme="dark"] .col-lg-4:nth-child(2) > .testimonial-card { background: linear-gradient(145deg, #14572b 0%, #218838 100%); } }
+[data-bs-theme="dark"] .col-lg-4:nth-child(2) > .testimonial-card p { color: #ffffff; }
+[data-bs-theme="dark"] .col-lg-4:nth-child(2) > .testimonial-card { background: linear-gradient(145deg, #14572b 0%, #218838 100%); }
+
+/* ==========================================================================
+   PALETTE v3 (dark) – black, white and green #2f9e4a only
+   ========================================================================== */
+[data-bs-theme="dark"] {
+  --gb-primary: #2f9e4a; --gb-primary-dark: #258040; --gb-primary-text: #2f9e4a; --gb-primary-rgb: 47, 158, 74;
+  --gb-secondary: #ffffff; --gb-secondary-dark: #e6e6e6;
+  --gb-accent: #14231a; --gb-bg: #0a0a0a; --gb-surface: #141414; --gb-surface-2: #1c1c1c;
+  --gb-heading: #ffffff; --gb-text: #b3b3b3; --gb-text-strong: #d9d9d9; --gb-border: #2a2a2a;
+  --gb-sale: #ffffff; --gb-sale-strong: #ffffff; --gb-warning: #ffffff; --gb-info: #2f9e4a;
+  --bs-body-bg: #0a0a0a; --bs-link-color-rgb: 47, 158, 74;
+}
+[data-bs-theme="dark"] .topbar, [data-bs-theme="dark"] .site-footer { background: #000; }
+[data-bs-theme="dark"] .hero-1:not(.hero-v2) { background: #0a0a0a; }
+[data-bs-theme="dark"] .hero-1.hero-v2 { background: linear-gradient(135deg, #000 0%, #14391f 60%, #2f9e4a 100%); }
+[data-bs-theme="dark"] .page-banner:not(.has-bg) { background: linear-gradient(120deg, #101010, #14231a); }
+[data-bs-theme="dark"] .page-banner.has-bg { background: #000; }
+[data-bs-theme="dark"] .stats-band { background: #141414; }
+[data-bs-theme="dark"] .newsletter { background: #1f7a38; }
+[data-bs-theme="dark"] .newsletter-form { background: #fff; }
+[data-bs-theme="dark"] .demo-note { background: #1c1c1c; color: #fff; border-color: #2a2a2a; }
+[data-bs-theme="dark"] .icon-box.orange, [data-bs-theme="dark"] .icon-box.red, [data-bs-theme="dark"] .icon-box.blue { background: #232323; color: #fff; }
+[data-bs-theme="dark"] .status-success { background: #14231a; color: #2f9e4a; }
+[data-bs-theme="dark"] .status-warning { background: #232323; color: #fff; }
+[data-bs-theme="dark"] .status-info { background: #14231a; color: #2f9e4a; }
+[data-bs-theme="dark"] .status-danger { background: #fff; color: #111; }
+[data-bs-theme="dark"] .status-muted { background: #232323; color: #b3b3b3; }
+[data-bs-theme="dark"] .form-control::placeholder { color: #808080; }
+[data-bs-theme="dark"] .map-placeholder, [data-bs-theme="dark"] .empty-state { border-color: #2a2a2a; }
+[data-bs-theme="dark"] .gb-toast { background: #1c1c1c; }
+[data-bs-theme="dark"] .btn-secondary-gb { background: #fff; border-color: #fff; color: #111; }
+[data-bs-theme="dark"] .btn-secondary-gb:hover { background: #e6e6e6; border-color: #e6e6e6; color: #111; }
+[data-bs-theme="dark"] .badge-tag.orange, [data-bs-theme="dark"] .plan-card .ribbon, [data-bs-theme="dark"] .about-collage .exp { background: #fff; color: #111; }
+[data-bs-theme="dark"] .about-collage .exp * { color: #111; }
+[data-bs-theme="dark"] .offer-banner { background: #1c1c1c; }
+[data-bs-theme="dark"] .bg-danger { background-color: #fff !important; color: #111 !important; }
+[data-bs-theme="dark"] .text-danger { color: #fff !important; }
+[data-bs-theme="dark"] .alert-danger, [data-bs-theme="dark"] .alert-warning { background: #1c1c1c; color: #fff; border-color: #2a2a2a; }
+[data-bs-theme="dark"] .alert-info, [data-bs-theme="dark"] .alert-success { background: #14231a; color: #2f9e4a; border-color: #1f3a28; }
+[data-bs-theme="dark"] .testimonial-card { background: linear-gradient(160deg, #181818 0%, #101010 100%); }
+[data-bs-theme="dark"] .testimonial-card p { color: #ececec; }
+[data-bs-theme="dark"] .testimonial-card .person img { border-color: #141414; }
+[data-bs-theme="dark"] .col-lg-4:nth-child(2) > .testimonial-card { background: linear-gradient(145deg, #1f7a38 0%, #2f9e4a 100%); }
+[data-bs-theme="dark"] .col-lg-4:nth-child(2) > .testimonial-card .person img { border-color: #1f7a38; }
+
+/* ========================================================================
+   GLOBAL DARK-MODE CONTRAST PATCH
+   Keep text readable on every badge, chip, status and utility surface.
+   ======================================================================== */
+[data-bs-theme="dark"] {
+  --gb-primary-text: #65dc83;
+  --gb-sale: #65dc83;
+  --gb-sale-strong: #2f9e4a;
+  --gb-warning: #2f9e4a;
+  --gb-info: #65dc83;
+  --bs-warning: #2f9e4a;
+  --bs-warning-rgb: 47, 158, 74;
+  --bs-info: #2f9e4a;
+  --bs-info-rgb: 47, 158, 74;
+}
+
+/* Product discount badges (e.g. -25%, -20%) */
+[data-bs-theme="dark"] .badge-sale,
+[data-bs-theme="dark"] .badge-tag,
+[data-bs-theme="dark"] .badge-tag.orange,
+[data-bs-theme="dark"] .product-badges .badge,
+[data-bs-theme="dark"] .product-card .badge-sale {
+  background: #2f9e4a !important;
+  color: #ffffff !important;
+  border-color: #2f9e4a !important;
+  opacity: 1 !important;
+}
+
+/* Other labels and Bootstrap utility badges */
+[data-bs-theme="dark"] .badge.bg-warning,
+[data-bs-theme="dark"] .badge.bg-info,
+[data-bs-theme="dark"] .bg-warning,
+[data-bs-theme="dark"] .bg-info,
+[data-bs-theme="dark"] .plan-card .ribbon,
+[data-bs-theme="dark"] .about-collage .exp,
+[data-bs-theme="dark"] .hero-promo .pill {
+  background-color: #2f9e4a !important;
+  color: #ffffff !important;
+  border-color: #2f9e4a !important;
+}
+[data-bs-theme="dark"] .badge.bg-warning *,
+[data-bs-theme="dark"] .badge.bg-info *,
+[data-bs-theme="dark"] .plan-card .ribbon *,
+[data-bs-theme="dark"] .about-collage .exp * {
+  color: #ffffff !important;
+}
+
+/* Status, count and sale-related text */
+[data-bs-theme="dark"] .status-badge,
+[data-bs-theme="dark"] .status-success,
+[data-bs-theme="dark"] .status-warning,
+[data-bs-theme="dark"] .status-info,
+[data-bs-theme="dark"] .status-muted {
+  color: #d9fbe2 !important;
+}
+[data-bs-theme="dark"] .status-danger {
+  background: #3a2020 !important;
+  color: #ffb4b4 !important;
+}
+[data-bs-theme="dark"] .price .off,
+[data-bs-theme="dark"] .text-sale,
+[data-bs-theme="dark"] .stock-label.low,
+[data-bs-theme="dark"] .stock-label.out {
+  color: #65dc83 !important;
+}
+[data-bs-theme="dark"] .count-badge {
+  background: #2f9e4a !important;
+  color: #ffffff !important;
+}
+
+/* Prevent muted/secondary text from inheriting low-contrast dark colours */
+[data-bs-theme="dark"] .text-dark,
+[data-bs-theme="dark"] .text-body,
+[data-bs-theme="dark"] .text-secondary-emphasis {
+  color: #e2e2e2 !important;
+}
+[data-bs-theme="dark"] .text-muted,
+[data-bs-theme="dark"] .form-text,
+[data-bs-theme="dark"] .form-label,
+[data-bs-theme="dark"] .form-check-label {
+  color: #bdbdbd !important;
+}
+[data-bs-theme="dark"] .form-control,
+[data-bs-theme="dark"] .form-select,
+[data-bs-theme="dark"] .input-group-text {
+  background-color: #1c1c1c;
+  color: #eeeeee;
+  border-color: #444444;
+}
+[data-bs-theme="dark"] .form-control:focus,
+[data-bs-theme="dark"] .form-select:focus {
+  background-color: #202020;
+  color: #ffffff;
+  border-color: #65dc83;
+}
+[data-bs-theme="dark"] .form-control::placeholder,
+[data-bs-theme="dark"] textarea::placeholder {
+  color: #a3a3a3 !important;
+  opacity: 1;
+}
