@@ -1,0 +1,12 @@
+# GreenBasket – robots.txt (replace example.com with your domain)
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /customer/
+Disallow: /cart.html
+Disallow: /checkout.html
+Disallow: /order-confirmation.html
+Disallow: /wishlist.html
+Disallow: /documentation/
+
+Sitemap: https://www.example.com/sitemap.xml

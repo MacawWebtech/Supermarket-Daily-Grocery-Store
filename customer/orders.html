@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Orders | GreenBasket</title>
+  <meta name="description" content="View and track your GreenBasket orders.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#218838">
+  <!-- Replace https://www.example.com/ with your live domain -->
+  <link rel="canonical" href="https://www.example.com/customer/orders.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GreenBasket">
+  <meta property="og:title" content="My Orders | GreenBasket">
+  <meta property="og:description" content="View and track your GreenBasket orders.">
+  <meta property="og:url" content="https://www.example.com/customer/orders.html">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=75">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
+  <!-- Apply saved theme / direction before paint (prevents a flash) -->
+  <script>/* Swap any image that fails to load for the local placeholder (runs before images load) */document.addEventListener('error',function(e){var t=e.target;if(t&&t.tagName==='IMG'&&!t.getAttribute('data-fallback')){t.setAttribute('data-fallback','1');t.src='../assets/images/placeholder.svg';}},true);</script>
+  <script>(function(){try{var g=function(k){var v=localStorage.getItem('gb-'+k);return v?JSON.parse(v):null};var t=g('theme')||(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-bs-theme',t);if(g('dir')==='rtl'){document.documentElement.dir='rtl';document.documentElement.lang=g('lang')||'ar';}}catch(e){}})();</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap">
+  <link id="bootstrap-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" data-ltr="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" data-rtl="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css">
+  <script>if(document.documentElement.dir==='rtl'){var b=document.getElementById('bootstrap-css');b.href=b.getAttribute('data-rtl');}</script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css?v=20261126">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css?v=20261126">
+  <link rel="stylesheet" href="../assets/css/rtl.css?v=20261126">
+  <link rel="stylesheet" href="../assets/css/responsive.css?v=20261126">
+</head>
+<body data-root="../" data-page="customer-orders">
+  <!-- Preloader -->
+  <div class="preloader" id="preloader" role="status" aria-live="polite" aria-label="Loading GreenBasket">
+    <div class="preloader-inner">
+      <img class="preloader-logo" src="../assets/images/logo.png" alt="GreenBasket – Supermarket &amp; Daily Grocery Store" width="240" height="124">
+      <div class="preloader-bar" aria-hidden="true"><span></span></div>
+    </div>
+  </div>
+  <script>window.addEventListener('load',function(){var p=document.getElementById('preloader');if(!p)return;setTimeout(function(){p.classList.add('is-hidden');setTimeout(function(){if(p.parentNode)p.parentNode.removeChild(p)},600)},Math.max(0,700-performance.now()))});</script>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="topbar">
+    <div class="container">
+      <ul class="topbar-list">
+        <li><i class="bi bi-truck" aria-hidden="true"></i>Free delivery on orders over <span data-price="499">₹499</span></li>
+        <li class="hide-sm"><a href="tel:+918045678900"><i class="bi bi-headset" aria-hidden="true"></i>+91 80 4567 8900</a></li>
+        <li class="hide-sm hide-md"><a href="../pages/contact.html"><i class="bi bi-geo-alt" aria-hidden="true"></i>Koramangala, Bengaluru</a></li>
+      </ul>
+      <div class="d-flex align-items-center gap-2">
+        <label class="visually-hidden" for="langSelect">Language</label>
+        <select id="langSelect" class="topbar-select" data-lang-select>
+          <option value="en">English</option>
+          <option value="ar">العربية (RTL)</option>
+          <option value="he">עברית (RTL)</option>
+        </select>
+        <label class="visually-hidden" for="currencySelect">Currency</label>
+        <select id="currencySelect" class="topbar-select" data-currency-select>
+          <option value="INR">₹ INR</option>
+          <option value="USD">$ USD</option>
+          <option value="EUR">€ EUR</option>
+          <option value="AED">AED</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <header class="site-header">
+    <div class="container">
+      <div class="header-main">
+        <button class="header-action d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Open menu"><i class="bi bi-list" aria-hidden="true"></i></button>
+        <a class="brand" href="../pages/index.html" aria-label="GreenBasket home">
+          <img class="brand-logo" src="../assets/images/logo-header.png" alt="GreenBasket" width="112" height="48"></a>
+        <div class="header-search-desktop flex-grow-1 d-flex justify-content-center"><form class="header-search" action="../products.html" method="get" role="search">
+            <div class="input-group">
+              <label class="visually-hidden" for="cat-d">Category</label>
+              <select class="form-select" id="cat-d" name="cat"><option value="all">All categories</option><option value="fruits-vegetables">Fruits & Vegetables</option><option value="dairy-eggs">Dairy & Eggs</option><option value="meat-seafood">Meat & Seafood</option><option value="bakery">Bakery</option><option value="beverages">Beverages</option><option value="snacks">Snacks</option><option value="rice-grains">Rice & Grains</option><option value="household">Household Essentials</option></select>
+              <label class="visually-hidden" for="q-d">Search products</label>
+              <input class="form-control" type="search" id="q-d" name="q" placeholder="Search for milk, apples, rice…" autocomplete="off">
+              <button class="btn btn-primary" type="submit"><i class="bi bi-search" aria-hidden="true"></i><span class="d-none d-sm-inline">Search</span></button>
+            </div>
+          </form></div>
+        <div class="header-actions">
+          <button class="header-action theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false"><i class="bi bi-moon-stars icon-light" aria-hidden="true"></i><i class="bi bi-sun icon-dark" aria-hidden="true"></i></button>
+          <button class="header-action rtl-toggle" type="button" data-rtl-toggle aria-label="Toggle right-to-left layout" aria-pressed="false" title="Toggle RTL / LTR"><i class="bi bi-text-right" aria-hidden="true"></i><span class="rtl-label">RTL</span></button>
+          <a class="header-action" href="../pages/login.html" aria-label="Account and login"><i class="bi bi-person" aria-hidden="true"></i></a>
+          <a class="header-action" href="../pages/wishlist.html" aria-label="Wishlist"><span class="ic-wrap"><i class="bi bi-heart" aria-hidden="true"></i><span class="count-badge" data-wishlist-count hidden>0</span></span></a>
+          <a class="header-action" href="../pages/cart.html" aria-label="Shopping cart"><span class="ic-wrap"><i class="bi bi-cart3" aria-hidden="true"></i><span class="count-badge" data-cart-count hidden>0</span></span></a>
+        </div>
+      </div>
+      <div class="header-search-mobile"><form class="header-search" action="../products.html" method="get" role="search">
+            <div class="input-group">
+              <label class="visually-hidden" for="cat-m">Category</label>
+              <select class="form-select" id="cat-m" name="cat"><option value="all">All categories</option><option value="fruits-vegetables">Fruits & Vegetables</option><option value="dairy-eggs">Dairy & Eggs</option><option value="meat-seafood">Meat & Seafood</option><option value="bakery">Bakery</option><option value="beverages">Beverages</option><option value="snacks">Snacks</option><option value="rice-grains">Rice & Grains</option><option value="household">Household Essentials</option></select>
+              <label class="visually-hidden" for="q-m">Search products</label>
+              <input class="form-control" type="search" id="q-m" name="q" placeholder="Search for milk, apples, rice…" autocomplete="off">
+              <button class="btn btn-primary" type="submit"><i class="bi bi-search" aria-hidden="true"></i><span class="d-none d-sm-inline">Search</span></button>
+            </div>
+          </form></div>
+    </div>
+    <nav class="main-nav" aria-label="Main navigation">
+      <div class="container">
+        <div class="dropdown">
+          <button class="btn cat-toggle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-grid-3x3-gap-fill" aria-hidden="true"></i> Browse categories</button>
+          <ul class="dropdown-menu cat-dropdown"><li><a class="dropdown-item d-flex align-items-center gap-2" href="../pages/products.html?cat=fruits-vegetables"><i class="bi bi-basket text-primary-gb" aria-hidden="true"></i>Fruits & Vegetables</a></li><li><a class="dropdown-item d-flex align-items-center gap-2" href="../pages/products.html?cat=dairy-eggs"><i class="bi bi-cup-straw text-primary-gb" aria-hidden="true"></i>Dairy & Eggs</a></li><li><a class="dropdown-item d-flex align-items-center gap-2" href="../pages/products.html?cat=meat-seafood"><i class="bi bi-egg-fried text-primary-gb" aria-hidden="true"></i>Meat & Seafood</a></li><li><a class="dropdown-item d-flex align-items-center gap-2" href="../pages/products.html?cat=bakery"><i class="bi bi-cake2 text-primary-gb" aria-hidden="true"></i>Bakery</a></li><li><a class="dropdown-item d-flex align-items-center gap-2" href="../pages/products.html?cat=beverages"><i class="bi bi-cup-hot text-primary-gb" aria-hidden="true"></i>Beverages</a></li><li><a class="dropdown-item d-flex align-items-center gap-2" href="../pages/products.html?cat=snacks"><i class="bi bi-cookie text-primary-gb" aria-hidden="true"></i>Snacks</a></li><li><a class="dropdown-item d-flex align-items-center gap-2" href="../pages/products.html?cat=rice-grains"><i class="bi bi-bag text-primary-gb" aria-hidden="true"></i>Rice & Grains</a></li><li><a class="dropdown-item d-flex align-items-center gap-2" href="../pages/products.html?cat=household"><i class="bi bi-house-heart text-primary-gb" aria-hidden="true"></i>Household Essentials</a></li><li><hr class="dropdown-divider"></li><li><a class="dropdown-item fw-semibold" href="../pages/products.html">View all products</a></li></ul>
+        </div>
+        <ul class="nav-links">
+          <li class="dropdown"><button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Home <i class="bi bi-chevron-down" aria-hidden="true"></i></button>
+            <ul class="dropdown-menu"><li><a class="dropdown-item" href="../pages/index.html">Home 1 – Grocery Store</a></li><li><a class="dropdown-item" href="../pages/index-2.html">Home 2 – Premium Grocery</a></li></ul></li>
+          <li class="dropdown position-static"><button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Categories <i class="bi bi-chevron-down" aria-hidden="true"></i></button>
+            <div class="dropdown-menu mega-menu">
+              <div class="row g-3">
+                <div class="col-lg-8"><h6>Shop by category</h6><div class="row g-1"><div class="col-md-6"><a class="mega-link" href="../pages/products.html?cat=fruits-vegetables"><span class="ic"><i class="bi bi-basket" aria-hidden="true"></i></span><span>Fruits & Vegetables<small>Farm-fresh daily</small></span></a></div><div class="col-md-6"><a class="mega-link" href="../pages/products.html?cat=dairy-eggs"><span class="ic"><i class="bi bi-cup-straw" aria-hidden="true"></i></span><span>Dairy & Eggs<small>Milk, curd, cheese</small></span></a></div><div class="col-md-6"><a class="mega-link" href="../pages/products.html?cat=meat-seafood"><span class="ic"><i class="bi bi-egg-fried" aria-hidden="true"></i></span><span>Meat & Seafood<small>Cleaned & packed</small></span></a></div><div class="col-md-6"><a class="mega-link" href="../pages/products.html?cat=bakery"><span class="ic"><i class="bi bi-cake2" aria-hidden="true"></i></span><span>Bakery<small>Baked every morning</small></span></a></div><div class="col-md-6"><a class="mega-link" href="../pages/products.html?cat=beverages"><span class="ic"><i class="bi bi-cup-hot" aria-hidden="true"></i></span><span>Beverages<small>Juices, tea, coffee</small></span></a></div><div class="col-md-6"><a class="mega-link" href="../pages/products.html?cat=snacks"><span class="ic"><i class="bi bi-cookie" aria-hidden="true"></i></span><span>Snacks<small>Chips, nuts, treats</small></span></a></div><div class="col-md-6"><a class="mega-link" href="../pages/products.html?cat=rice-grains"><span class="ic"><i class="bi bi-bag" aria-hidden="true"></i></span><span>Rice & Grains<small>Staples & oils</small></span></a></div><div class="col-md-6"><a class="mega-link" href="../pages/products.html?cat=household"><span class="ic"><i class="bi bi-house-heart" aria-hidden="true"></i></span><span>Household Essentials<small>Cleaning & care</small></span></a></div></div></div>
+                <div class="col-lg-4"><div class="mega-promo"><img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=600&q=75" alt="Fresh vegetables at the market" loading="lazy"><div class="content"><span class="badge bg-warning text-dark align-self-start mb-2">Up to 30% off</span><h5>Fresh produce week</h5><a class="btn btn-sm btn-white align-self-start" href="../pages/products.html?cat=fruits-vegetables">Shop now</a></div></div></div>
+              </div>
+            </div></li>
+          <li><a href="../pages/delivery-info.html">Delivery Info</a></li>
+          <li><a href="../pages/about.html">About Us</a></li>
+          <li><a href="../pages/blog.html">Blog</a></li>
+          <li><a href="../pages/contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-extra">
+          <a href="../pages/order-tracking.html"><i class="bi bi-geo" aria-hidden="true"></i>Track order</a>
+          <a href="../pages/pricing.html"><i class="bi bi-gem" aria-hidden="true"></i>Membership</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="offcanvas offcanvas-start mobile-nav" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
+    <div class="offcanvas-header">
+      <h2 class="offcanvas-title h5" id="mobileNavLabel">Menu</h2>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close menu"></button>
+    </div>
+    <div class="offcanvas-body">
+      <nav aria-label="Mobile navigation">
+        <a class="nav-link" href="../pages/index.html">Home 1 – Grocery Store</a>
+        <a class="nav-link" href="../pages/index-2.html">Home 2 – Premium Grocery</a>
+        <a class="nav-link" data-bs-toggle="collapse" href="#mobCats" role="button" aria-expanded="false" aria-controls="mobCats">Categories <i class="bi bi-chevron-down" aria-hidden="true"></i></a>
+        <div class="collapse sub" id="mobCats"><a href="../pages/products.html?cat=fruits-vegetables">Fruits & Vegetables</a><a href="../pages/products.html?cat=dairy-eggs">Dairy & Eggs</a><a href="../pages/products.html?cat=meat-seafood">Meat & Seafood</a><a href="../pages/products.html?cat=bakery">Bakery</a><a href="../pages/products.html?cat=beverages">Beverages</a><a href="../pages/products.html?cat=snacks">Snacks</a><a href="../pages/products.html?cat=rice-grains">Rice & Grains</a><a href="../pages/products.html?cat=household">Household Essentials</a></div>
+        <a class="nav-link" href="../pages/about.html">About Us</a>
+        <a class="nav-link" href="../pages/blog.html">Blog</a>
+        <a class="nav-link" href="../pages/contact.html">Contact</a>
+        <a class="nav-link" href="../pages/order-tracking.html">Track order</a>
+        <a class="nav-link" href="../pages/delivery-info.html">Delivery information</a>
+        <a class="nav-link" href="../pages/pricing.html">Membership plans</a>
+        <a class="nav-link" href="../customer/dashboard.html">My account</a>
+      </nav>
+      <div class="d-grid gap-2 mt-4">
+        <button class="btn btn-light-gb theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false"><i class="bi bi-moon-stars icon-light" aria-hidden="true"></i><i class="bi bi-sun icon-dark" aria-hidden="true"></i> Light / dark mode</button>
+        <button class="btn btn-light-gb" type="button" data-rtl-toggle aria-pressed="false"><i class="bi bi-text-right" aria-hidden="true"></i> RTL / LTR direction</button>
+        <a class="btn btn-primary" href="../pages/login.html">Sign in</a>
+        <a class="btn btn-outline-primary" href="../pages/register.html">Create account</a>
+      </div>
+    </div>
+  </div>
+  <main id="main">
+<section class="page-banner has-bg">
+      <img class="banner-bg" src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=1600&q=70" alt="" width="1600" height="500" loading="lazy" aria-hidden="true">
+      <div class="container position-relative" style="z-index:1">
+        <h1>My Orders</h1>
+        
+        <nav aria-label="Breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pages/index.html">Home</a></li><li class="breadcrumb-item"><a href="dashboard.html">My Account</a></li><li class="breadcrumb-item active" aria-current="page">My Orders</li></ol></nav>
+      </div>
+    </section>
+    <section class="section-sm">
+      <div class="container">
+        <button class="btn btn-light-gb mb-3 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#dashSidebar" aria-controls="dashSidebar"><i class="bi bi-layout-sidebar" aria-hidden="true"></i> Account menu</button>
+        <div class="dash-layout">
+          <aside class="dash-sidebar offcanvas-lg offcanvas-start" tabindex="-1" id="dashSidebar" aria-labelledby="dashSidebarLabel">
+          <div class="offcanvas-header d-lg-none"><h2 class="offcanvas-title h5" id="dashSidebarLabel">My account</h2><button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#dashSidebar" aria-label="Close account menu"></button></div>
+          <div class="card-gb w-100">
+            <div class="user-card"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=75" alt="" width="52" height="52"><div><strong class="text-heading d-block" data-user-name>Priya Sharma</strong><small data-user-email>priya.sharma@example.com</small></div></div>
+            <nav aria-label="Account navigation"><ul class="dash-menu"><li><a href="dashboard.html"><i class="bi bi-grid" aria-hidden="true"></i>Overview</a></li><li><a href="orders.html" class="active" aria-current="page"><i class="bi bi-bag-check" aria-hidden="true"></i>My Orders</a></li><li><a href="../pages/order-tracking.html"><i class="bi bi-geo" aria-hidden="true"></i>Track Order</a></li><li><a href="shopping-lists.html"><i class="bi bi-card-checklist" aria-hidden="true"></i>My Shopping Lists</a></li><li><a href="../pages/wishlist.html"><i class="bi bi-heart" aria-hidden="true"></i>Wishlist</a></li><li><a href="addresses.html"><i class="bi bi-geo-alt" aria-hidden="true"></i>Saved Addresses</a></li><li><a href="profile.html"><i class="bi bi-person-gear" aria-hidden="true"></i>Profile Settings</a></li><li><a href="dashboard.html#notifications"><i class="bi bi-bell" aria-hidden="true"></i>Notifications<span class="badge rounded-pill bg-danger" data-unread-count>2</span></a></li><li><button type="button" data-logout><i class="bi bi-box-arrow-right" aria-hidden="true"></i>Logout</button></li></ul></nav>
+          </div>
+        </aside>
+          <div class="dash-content">
+            <p class="demo-note mb-4"><i class="bi bi-info-circle" aria-hidden="true"></i><span>Demo account area: data is sample data plus anything you create, saved only in this browser. Real accounts require backend authentication.</span></p>
+
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <div class="input-icon flex-grow-1" style="max-width:360px"><i class="bi bi-search" aria-hidden="true"></i><label class="visually-hidden" for="orderSearch">Search orders</label><input class="form-control" id="orderSearch" type="search" placeholder="Search by order ID or product" data-orders-search></div>
+              <label class="visually-hidden" for="orderFilter">Filter orders</label>
+              <select class="form-select w-auto" id="orderFilter" data-orders-filter><option value="all">All orders</option><option value="active">In progress</option><option value="delivered">Delivered</option><option value="cancelled">Cancelled</option></select>
+            </div>
+            <div class="card-gb p-0 overflow-hidden">
+              <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 p-3 border-bottom"><h2 class="h5 mb-0">Order history</h2></div>
+              <div class="table-responsive"><table class="table table-gb table-hover table-responsive-stack"><caption class="visually-hidden">Order history</caption><thead><tr><th scope="col">Order ID</th><th scope="col">Order date</th><th scope="col">Products</th><th scope="col">Amount</th><th scope="col">Payment</th><th scope="col">Delivery</th><th scope="col" class="text-lg-end">Action</th></tr></thead><tbody data-orders-table></tbody></table></div>
+            </div>
+            <div class="empty-state mt-3" data-orders-empty hidden><div class="ic"><i class="bi bi-bag-x" aria-hidden="true"></i></div><h2>No orders match</h2><p>Try a different filter or search term.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" aria-labelledby="footer-heading">
+    <h2 id="footer-heading" class="visually-hidden">Footer</h2>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-12 col-lg-3 order-1 footer-col-brand">
+          <a class="brand" href="../pages/index.html" aria-label="GreenBasket home">
+          <img class="brand-logo" src="../assets/images/logo-header.png" alt="GreenBasket" width="112" height="48"></a>
+          <p class="mt-3 mb-4">Your neighbourhood supermarket, online. Fresh groceries, daily essentials and household needs delivered to your doorstep at honest prices.</p>
+          <div class="social-links" aria-label="Social media">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="GreenBasket on Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="GreenBasket on Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+            <a href="https://x.com/" target="_blank" rel="noopener" aria-label="GreenBasket on X"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="GreenBasket on YouTube"><i class="bi bi-youtube" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2 order-2 footer-col">
+          <h2>Quick links</h2>
+          <ul class="footer-links">
+            <li><a href="../pages/about.html">About us</a></li>
+            <li><a href="../pages/products.html?deals=1">Deals &amp; offers</a></li>
+            <li><a href="../pages/pricing.html">Membership</a></li>
+            <li><a href="../pages/blog.html">Blog</a></li>
+            <li><a href="../pages/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-4 col-lg-2 order-4 order-md-3 footer-col footer-col-cats">
+          <h2>Categories</h2>
+          <ul class="footer-links"><li><a href="../pages/products.html?cat=fruits-vegetables">Fruits & Vegetables</a></li><li><a href="../pages/products.html?cat=dairy-eggs">Dairy & Eggs</a></li><li><a href="../pages/products.html?cat=meat-seafood">Meat & Seafood</a></li><li><a href="../pages/products.html?cat=bakery">Bakery</a></li><li><a href="../pages/products.html?cat=beverages">Beverages</a></li><li><a href="../pages/products.html?cat=snacks">Snacks</a></li></ul>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2 order-3 order-md-4 footer-col">
+          <h2>Customer support</h2>
+          <ul class="footer-links">
+            <li><a href="../customer/dashboard.html">My account</a></li>
+            <li><a href="../pages/order-tracking.html">Track order</a></li>
+            <li><a href="../pages/delivery-info.html">Delivery info</a></li>
+            <li><a href="../pages/delivery-info.html#faq">FAQs</a></li>
+            <li><a href="../pages/wishlist.html">Wishlist</a></li>
+            <li><a href="../pages/cart.html">Cart</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-12 col-lg-3 order-5 footer-col footer-col-contact">
+          <h2>Contact</h2>
+          <ul class="footer-links footer-contact">
+            <li><i class="bi bi-geo-alt" aria-hidden="true"></i><span>42, 80 Feet Road, Koramangala, Bengaluru 560034</span></li>
+            <li><i class="bi bi-telephone" aria-hidden="true"></i><a href="tel:+918045678900">+91 80 4567 8900</a></li>
+            <li><i class="bi bi-envelope" aria-hidden="true"></i><a href="mailto:hello@greenbasket.example">hello@greenbasket.example</a></li>
+            <li><i class="bi bi-clock" aria-hidden="true"></i><span>7 AM – 10 PM, every day</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom d-flex flex-wrap gap-3 justify-content-between align-items-center">
+        <p class="mb-0">&copy; <span data-year>2026</span> GreenBasket Supermarket. All rights reserved. Template demo – prices and orders are samples.</p>
+        <div class="pay-icons" aria-label="Accepted payment methods">
+          <span><i class="bi bi-credit-card" aria-hidden="true"></i>VISA</span><span>Mastercard</span><span>RuPay</span><span>UPI</span><span><i class="bi bi-paypal" aria-hidden="true"></i>PayPal</span><span><i class="bi bi-cash" aria-hidden="true"></i>COD</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <button class="back-to-top" type="button" aria-label="Back to top"><i class="bi bi-arrow-up" aria-hidden="true"></i></button>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+  <script>
+/* GreenBasket product catalogue: kept in HTML so product data and image URLs are easy to edit. */
+(function () {
+  const GB = (window.GB = window.GB || {});
+  /** Build an Unsplash image URL at a given width. */
+  const U = (id, w = 600) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=75`;
+  GB.img = U;
+
+  /* ------------------------------------------------------------------ */
+  /* 1. CATALOGUE                                                         */
+  /* ------------------------------------------------------------------ */
+  GB.categories = [
+    { slug: 'fruits-vegetables', name: 'Fruits & Vegetables', icon: 'bi-basket', img: U('1610832958506-aa56368176cf', 500) },
+    { slug: 'dairy-eggs', name: 'Dairy & Eggs', icon: 'bi-cup-straw', img: U('1563636619-e9143da7973b', 500) },
+    { slug: 'meat-seafood', name: 'Meat & Seafood', icon: 'bi-egg-fried', img: U('1603048297172-c92544798d5a', 500) },
+    { slug: 'bakery', name: 'Bakery', icon: 'bi-cake2', img: U('1608198093002-ad4e005484ec', 500) },
+    { slug: 'beverages', name: 'Beverages', icon: 'bi-cup-hot', img: U('1544145945-f90425340c7e', 500) },
+    { slug: 'snacks', name: 'Snacks', icon: 'bi-cookie', img: U('1621939514649-280e2ee25f60', 500) },
+    { slug: 'rice-grains', name: 'Rice & Grains', icon: 'bi-bag', img: U('1536304993881-ff6e9eefa2a6', 500) },
+    { slug: 'household', name: 'Household Essentials', icon: 'bi-house-heart', img: U('1583947215259-38e31be8751f', 500) }
+  ];
+
+})();
+</script>
+<!-- Product catalogue: edit product details and image URLs here in HTML. -->
+<div hidden data-product-catalog>
+    <article data-id="p01" data-name="Fresh Red Apples" data-cat="fruits-vegetables" data-brand="FarmLeaf" data-unit="1 kg" data-price="149" data-rating="4.7" data-reviews="214" data-sold="1820" data-stock="64" data-organic="True" data-essential="True" data-isNew="False" data-desc="Crisp, juicy Shimla apples hand-picked at peak ripeness. Perfect for snacking, salads and baking." data-old-price="180" data-img-lg="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;500 g&quot;,&quot;mult&quot;:0.55},{&quot;label&quot;:&quot;1 kg&quot;,&quot;mult&quot;:1},{&quot;label&quot;:&quot;2 kg&quot;,&quot;mult&quot;:1.9}]"><img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Fresh Red Apples"></article>
+    <article data-id="p02" data-name="Organic Bananas" data-cat="fruits-vegetables" data-brand="FarmLeaf" data-unit="1 dozen" data-price="59" data-rating="4.6" data-reviews="188" data-sold="2410" data-stock="120" data-organic="True" data-essential="True" data-isNew="False" data-desc="Naturally ripened organic bananas, rich in potassium and great for smoothies." data-old-price="70" data-img-lg="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;6 pcs&quot;,&quot;mult&quot;:0.55},{&quot;label&quot;:&quot;1 dozen&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Organic Bananas"></article>
+    <article data-id="p03" data-name="Vine Tomatoes" data-cat="fruits-vegetables" data-brand="FarmLeaf" data-unit="1 kg" data-price="45" data-rating="4.4" data-reviews="132" data-sold="2050" data-stock="80" data-organic="False" data-essential="True" data-isNew="False" data-desc="Bright red, firm tomatoes for curries, sauces and fresh salads." data-old-price="60" data-img-lg="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;500 g&quot;,&quot;mult&quot;:0.55},{&quot;label&quot;:&quot;1 kg&quot;,&quot;mult&quot;:1},{&quot;label&quot;:&quot;2 kg&quot;,&quot;mult&quot;:1.9}]"><img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Vine Tomatoes"></article>
+    <article data-id="p04" data-name="Fresh Carrots" data-cat="fruits-vegetables" data-brand="FarmLeaf" data-unit="1 kg" data-price="55" data-rating="4.5" data-reviews="96" data-sold="1340" data-stock="70" data-organic="True" data-essential="False" data-isNew="False" data-desc="Sweet, crunchy carrots – washed and ready to cook or juice." data-old-price="" data-img-lg="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;500 g&quot;,&quot;mult&quot;:0.55},{&quot;label&quot;:&quot;1 kg&quot;,&quot;mult&quot;:1},{&quot;label&quot;:&quot;2 kg&quot;,&quot;mult&quot;:1.9}]"><img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Fresh Carrots"></article>
+    <article data-id="p05" data-name="Hass Avocados" data-cat="fruits-vegetables" data-brand="GreenGrove" data-unit="2 pcs" data-price="199" data-rating="4.6" data-reviews="74" data-sold="620" data-stock="18" data-organic="True" data-essential="False" data-isNew="True" data-desc="Creamy imported Hass avocados – ideal for toast, guacamole and salads." data-old-price="240" data-img-lg="https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;2 pcs&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Hass Avocados"></article>
+    <article data-id="p06" data-name="Alphonso Mangoes" data-cat="fruits-vegetables" data-brand="GreenGrove" data-unit="1 kg" data-price="399" data-rating="4.9" data-reviews="302" data-sold="980" data-stock="6" data-organic="False" data-essential="False" data-isNew="True" data-desc="Seasonal Ratnagiri Alphonso mangoes with rich aroma and sweet golden flesh." data-old-price="450" data-img-lg="https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;500 g&quot;,&quot;mult&quot;:0.55},{&quot;label&quot;:&quot;1 kg&quot;,&quot;mult&quot;:1},{&quot;label&quot;:&quot;2 kg&quot;,&quot;mult&quot;:1.9}]"><img src="https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Alphonso Mangoes"></article>
+    <article data-id="p07" data-name="Fresh Strawberries" data-cat="fruits-vegetables" data-brand="GreenGrove" data-unit="250 g" data-price="129" data-rating="4.5" data-reviews="88" data-sold="740" data-stock="25" data-organic="True" data-essential="False" data-isNew="False" data-desc="Sweet Mahabaleshwar strawberries packed fresh every morning." data-old-price="160" data-img-lg="https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;250 g&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Fresh Strawberries"></article>
+    <article data-id="p08" data-name="Green Broccoli" data-cat="fruits-vegetables" data-brand="FarmLeaf" data-unit="500 g" data-price="90" data-rating="4.3" data-reviews="51" data-sold="560" data-stock="0" data-organic="True" data-essential="False" data-isNew="False" data-desc="Tender broccoli florets packed with fibre and vitamin C." data-old-price="" data-img-lg="https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;500 g&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Green Broccoli"></article>
+    <article data-id="p09" data-name="Potatoes" data-cat="fruits-vegetables" data-brand="FarmLeaf" data-unit="2 kg" data-price="68" data-rating="4.4" data-reviews="160" data-sold="2600" data-stock="150" data-organic="False" data-essential="True" data-isNew="False" data-desc="All-purpose potatoes for fries, curries and mash." data-old-price="80" data-img-lg="https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;1 kg&quot;,&quot;mult&quot;:0.55},{&quot;label&quot;:&quot;2 kg&quot;,&quot;mult&quot;:1},{&quot;label&quot;:&quot;5 kg&quot;,&quot;mult&quot;:2.4}]"><img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Potatoes"></article>
+    <article data-id="p10" data-name="Farm Fresh Toned Milk" data-cat="dairy-eggs" data-brand="DairyDale" data-unit="1 L" data-price="68" data-rating="4.8" data-reviews="410" data-sold="5200" data-stock="200" data-organic="False" data-essential="True" data-isNew="False" data-desc="Pasteurised toned milk delivered chilled from local dairy farms." data-old-price="" data-img-lg="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;500 ml&quot;,&quot;mult&quot;:0.52},{&quot;label&quot;:&quot;1 L&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Farm Fresh Toned Milk"></article>
+    <article data-id="p11" data-name="Free-Range Brown Eggs" data-cat="dairy-eggs" data-brand="DairyDale" data-unit="12 pcs" data-price="99" data-rating="4.7" data-reviews="276" data-sold="3100" data-stock="90" data-organic="True" data-essential="True" data-isNew="False" data-desc="Protein-rich brown eggs from free-range hens, checked for freshness." data-old-price="120" data-img-lg="https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;6 pcs&quot;,&quot;mult&quot;:0.55},{&quot;label&quot;:&quot;12 pcs&quot;,&quot;mult&quot;:1},{&quot;label&quot;:&quot;30 pcs&quot;,&quot;mult&quot;:2.35}]"><img src="https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Free-Range Brown Eggs"></article>
+    <article data-id="p12" data-name="Greek Yogurt Plain" data-cat="dairy-eggs" data-brand="DairyDale" data-unit="400 g" data-price="110" data-rating="4.5" data-reviews="98" data-sold="860" data-stock="40" data-organic="False" data-essential="False" data-isNew="True" data-desc="Thick, creamy high-protein Greek yogurt with live cultures." data-old-price="" data-img-lg="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;400 g&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Greek Yogurt Plain"></article>
+    <article data-id="p13" data-name="Aged Cheddar Cheese" data-cat="dairy-eggs" data-brand="DairyDale" data-unit="200 g" data-price="189" data-rating="4.6" data-reviews="63" data-sold="410" data-stock="12" data-organic="False" data-essential="False" data-isNew="False" data-desc="Mature cheddar with a sharp, nutty flavour – great for sandwiches." data-old-price="220" data-img-lg="https://images.unsplash.com/photo-1452195100486-9cc805987862?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;200 g&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1452195100486-9cc805987862?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Aged Cheddar Cheese"></article>
+    <article data-id="p14" data-name="Salted Butter" data-cat="dairy-eggs" data-brand="DairyDale" data-unit="500 g" data-price="285" data-rating="4.7" data-reviews="190" data-sold="1500" data-stock="55" data-organic="False" data-essential="True" data-isNew="False" data-desc="Rich, creamy salted butter made from fresh cream." data-old-price="" data-img-lg="https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;100 g&quot;,&quot;mult&quot;:0.22},{&quot;label&quot;:&quot;500 g&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Salted Butter"></article>
+    <article data-id="p15" data-name="Boneless Chicken Breast" data-cat="meat-seafood" data-brand="OceanCatch" data-unit="500 g" data-price="229" data-rating="4.6" data-reviews="230" data-sold="1980" data-stock="35" data-organic="False" data-essential="True" data-isNew="False" data-desc="Antibiotic-residue-free chicken breast, cleaned and vacuum packed." data-old-price="260" data-img-lg="https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;500 g&quot;,&quot;mult&quot;:1},{&quot;label&quot;:&quot;1 kg&quot;,&quot;mult&quot;:1.9}]"><img src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Boneless Chicken Breast"></article>
+    <article data-id="p16" data-name="Atlantic Salmon Fillet" data-cat="meat-seafood" data-brand="OceanCatch" data-unit="250 g" data-price="579" data-rating="4.8" data-reviews="84" data-sold="390" data-stock="9" data-organic="False" data-essential="False" data-isNew="True" data-desc="Skin-on Norwegian salmon fillet, rich in omega-3 fatty acids." data-old-price="650" data-img-lg="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;250 g&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Atlantic Salmon Fillet"></article>
+    <article data-id="p17" data-name="Tiger Prawns (Cleaned)" data-cat="meat-seafood" data-brand="OceanCatch" data-unit="500 g" data-price="520" data-rating="4.4" data-reviews="57" data-sold="300" data-stock="0" data-organic="False" data-essential="False" data-isNew="False" data-desc="Large tiger prawns, deveined and ready to cook." data-old-price="" data-img-lg="https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;500 g&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Tiger Prawns (Cleaned)"></article>
+    <article data-id="p18" data-name="Mutton Curry Cut" data-cat="meat-seafood" data-brand="OceanCatch" data-unit="500 g" data-price="480" data-rating="4.5" data-reviews="112" data-sold="760" data-stock="20" data-organic="False" data-essential="False" data-isNew="False" data-desc="Tender goat meat curry cut with bone, freshly prepared." data-old-price="" data-img-lg="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;500 g&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Mutton Curry Cut"></article>
+    <article data-id="p19" data-name="Premium Steak Cut" data-cat="meat-seafood" data-brand="OceanCatch" data-unit="300 g" data-price="690" data-rating="4.7" data-reviews="41" data-sold="210" data-stock="7" data-organic="False" data-essential="False" data-isNew="True" data-desc="Well-marbled premium steak cut for grilling and pan searing." data-old-price="760" data-img-lg="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;300 g&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Premium Steak Cut"></article>
+    <article data-id="p20" data-name="Whole Wheat Bread" data-cat="bakery" data-brand="Golden Crust" data-unit="400 g" data-price="45" data-rating="4.5" data-reviews="320" data-sold="4100" data-stock="75" data-organic="False" data-essential="True" data-isNew="False" data-desc="Soft whole wheat sandwich bread baked fresh every morning." data-old-price="55" data-img-lg="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;400 g&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Whole Wheat Bread"></article>
+    <article data-id="p21" data-name="Butter Croissants" data-cat="bakery" data-brand="Golden Crust" data-unit="4 pcs" data-price="149" data-rating="4.7" data-reviews="140" data-sold="990" data-stock="22" data-organic="False" data-essential="False" data-isNew="True" data-desc="Flaky, golden croissants made with real butter." data-old-price="180" data-img-lg="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;4 pcs&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Butter Croissants"></article>
+    <article data-id="p22" data-name="Artisan Sourdough Loaf" data-cat="bakery" data-brand="Golden Crust" data-unit="500 g" data-price="160" data-rating="4.8" data-reviews="96" data-sold="640" data-stock="14" data-organic="True" data-essential="False" data-isNew="False" data-desc="Slow-fermented sourdough with a crisp crust and open crumb." data-old-price="" data-img-lg="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;500 g&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Artisan Sourdough Loaf"></article>
+    <article data-id="p23" data-name="Choco Chip Cookies" data-cat="bakery" data-brand="Golden Crust" data-unit="250 g" data-price="119" data-rating="4.6" data-reviews="205" data-sold="1620" data-stock="48" data-organic="False" data-essential="False" data-isNew="False" data-desc="Crunchy cookies loaded with dark chocolate chips." data-old-price="140" data-img-lg="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;250 g&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Choco Chip Cookies"></article>
+    <article data-id="p24" data-name="French Baguette" data-cat="bakery" data-brand="Golden Crust" data-unit="1 pc" data-price="90" data-rating="4.4" data-reviews="58" data-sold="380" data-stock="16" data-organic="False" data-essential="False" data-isNew="False" data-desc="Classic crusty baguette baked twice daily." data-old-price="" data-img-lg="https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;1 pc&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="French Baguette"></article>
+    <article data-id="p25" data-name="Cold-Pressed Orange Juice" data-cat="beverages" data-brand="BrewNest" data-unit="1 L" data-price="119" data-rating="4.5" data-reviews="150" data-sold="1450" data-stock="40" data-organic="False" data-essential="False" data-isNew="True" data-desc="No added sugar – just freshly cold-pressed oranges." data-old-price="140" data-img-lg="https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;1 L&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Cold-Pressed Orange Juice"></article>
+    <article data-id="p26" data-name="Arabica Coffee Beans" data-cat="beverages" data-brand="BrewNest" data-unit="250 g" data-price="359" data-rating="4.8" data-reviews="178" data-sold="820" data-stock="30" data-organic="False" data-essential="False" data-isNew="False" data-desc="Medium-roast single-estate Arabica beans from Chikmagalur." data-old-price="420" data-img-lg="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;250 g&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Arabica Coffee Beans"></article>
+    <article data-id="p27" data-name="Green Tea Bags" data-cat="beverages" data-brand="BrewNest" data-unit="25 bags" data-price="160" data-rating="4.4" data-reviews="92" data-sold="700" data-stock="60" data-organic="True" data-essential="False" data-isNew="False" data-desc="Light, refreshing green tea with natural antioxidants." data-old-price="" data-img-lg="https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;25 bags&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Green Tea Bags"></article>
+    <article data-id="p28" data-name="Sparkling Mineral Water" data-cat="beverages" data-brand="BrewNest" data-unit="6 × 500 ml" data-price="240" data-rating="4.3" data-reviews="44" data-sold="330" data-stock="26" data-organic="False" data-essential="False" data-isNew="False" data-desc="Naturally carbonated mineral water in recyclable bottles." data-old-price="270" data-img-lg="https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;6 \u00d7 500 ml&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Sparkling Mineral Water"></article>
+    <article data-id="p29" data-name="Tender Coconut Water" data-cat="beverages" data-brand="BrewNest" data-unit="1 L" data-price="99" data-rating="4.5" data-reviews="70" data-sold="610" data-stock="3" data-organic="True" data-essential="False" data-isNew="False" data-desc="Naturally hydrating coconut water with electrolytes." data-old-price="" data-img-lg="https://images.unsplash.com/photo-1536657464919-892534f60d6e?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;1 L&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1536657464919-892534f60d6e?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Tender Coconut Water"></article>
+    <article data-id="p30" data-name="Classic Salted Chips" data-cat="snacks" data-brand="Crunchies" data-unit="150 g" data-price="40" data-rating="4.4" data-reviews="260" data-sold="3800" data-stock="140" data-organic="False" data-essential="False" data-isNew="False" data-desc="Thin, crispy potato chips with just the right amount of salt." data-old-price="50" data-img-lg="https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;150 g&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Classic Salted Chips"></article>
+    <article data-id="p31" data-name="Premium Mixed Nuts" data-cat="snacks" data-brand="Crunchies" data-unit="400 g" data-price="449" data-rating="4.7" data-reviews="133" data-sold="880" data-stock="28" data-organic="False" data-essential="True" data-isNew="False" data-desc="Roasted almonds, cashews, pistachios and walnuts." data-old-price="520" data-img-lg="https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;400 g&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Premium Mixed Nuts"></article>
+    <article data-id="p32" data-name="Dark Chocolate 70%" data-cat="snacks" data-brand="Crunchies" data-unit="100 g" data-price="180" data-rating="4.6" data-reviews="120" data-sold="900" data-stock="44" data-organic="False" data-essential="False" data-isNew="True" data-desc="Smooth 70% cocoa dark chocolate bar." data-old-price="" data-img-lg="https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;100 g&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Dark Chocolate 70%"></article>
+    <article data-id="p33" data-name="Crunchy Honey Granola" data-cat="snacks" data-brand="Crunchies" data-unit="500 g" data-price="279" data-rating="4.5" data-reviews="77" data-sold="520" data-stock="19" data-organic="True" data-essential="False" data-isNew="False" data-desc="Baked oat clusters with honey, nuts and seeds." data-old-price="320" data-img-lg="https://images.unsplash.com/photo-1517093157656-b9eccef91cb1?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;500 g&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1517093157656-b9eccef91cb1?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Crunchy Honey Granola"></article>
+    <article data-id="p34" data-name="Raw Forest Honey" data-cat="snacks" data-brand="HarvestGold" data-unit="500 g" data-price="350" data-rating="4.8" data-reviews="145" data-sold="700" data-stock="33" data-organic="True" data-essential="False" data-isNew="False" data-desc="Unprocessed raw honey sourced from forest bee farms." data-old-price="" data-img-lg="https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;500 g&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Raw Forest Honey"></article>
+    <article data-id="p35" data-name="Aged Basmati Rice" data-cat="rice-grains" data-brand="HarvestGold" data-unit="5 kg" data-price="549" data-rating="4.8" data-reviews="390" data-sold="2900" data-stock="85" data-organic="False" data-essential="True" data-isNew="False" data-desc="Extra-long grain basmati aged for 2 years for perfect biryani." data-old-price="650" data-img-lg="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;1 kg&quot;,&quot;mult&quot;:0.24},{&quot;label&quot;:&quot;5 kg&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Aged Basmati Rice"></article>
+    <article data-id="p36" data-name="Whole Wheat Atta" data-cat="rice-grains" data-brand="HarvestGold" data-unit="5 kg" data-price="249" data-rating="4.6" data-reviews="340" data-sold="3300" data-stock="95" data-organic="False" data-essential="True" data-isNew="False" data-desc="Stone-ground whole wheat flour for soft rotis." data-old-price="280" data-img-lg="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;5 kg&quot;,&quot;mult&quot;:1},{&quot;label&quot;:&quot;10 kg&quot;,&quot;mult&quot;:1.92}]"><img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Whole Wheat Atta"></article>
+    <article data-id="p37" data-name="Extra Virgin Olive Oil" data-cat="rice-grains" data-brand="HarvestGold" data-unit="1 L" data-price="749" data-rating="4.7" data-reviews="160" data-sold="820" data-stock="24" data-organic="False" data-essential="False" data-isNew="False" data-desc="Cold-extracted Spanish extra virgin olive oil." data-old-price="899" data-img-lg="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;500 ml&quot;,&quot;mult&quot;:0.55},{&quot;label&quot;:&quot;1 L&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Extra Virgin Olive Oil"></article>
+    <article data-id="p38" data-name="Rolled Oats" data-cat="rice-grains" data-brand="HarvestGold" data-unit="1 kg" data-price="210" data-rating="4.5" data-reviews="110" data-sold="1100" data-stock="52" data-organic="True" data-essential="True" data-isNew="False" data-desc="Wholegrain rolled oats for porridge, overnight oats and baking." data-old-price="" data-img-lg="https://images.unsplash.com/photo-1614961233913-a5113a4a34ed?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;1 kg&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1614961233913-a5113a4a34ed?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Rolled Oats"></article>
+    <article data-id="p39" data-name="Red Lentils (Masoor Dal)" data-cat="rice-grains" data-brand="HarvestGold" data-unit="1 kg" data-price="140" data-rating="4.5" data-reviews="98" data-sold="1500" data-stock="66" data-organic="False" data-essential="True" data-isNew="False" data-desc="Unpolished split red lentils that cook quickly." data-old-price="155" data-img-lg="https://images.unsplash.com/photo-1585996746495-6c1a7b0aa8a4?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;1 kg&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1585996746495-6c1a7b0aa8a4?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Red Lentils (Masoor Dal)"></article>
+    <article data-id="p40" data-name="Lemon Dishwash Liquid" data-cat="household" data-brand="SparkleHome" data-unit="750 ml" data-price="169" data-rating="4.5" data-reviews="210" data-sold="2200" data-stock="70" data-organic="False" data-essential="True" data-isNew="False" data-desc="Grease-cutting dishwash gel with real lemon extracts." data-old-price="199" data-img-lg="https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;750 ml&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Lemon Dishwash Liquid"></article>
+    <article data-id="p41" data-name="Laundry Detergent Powder" data-cat="household" data-brand="SparkleHome" data-unit="2 kg" data-price="389" data-rating="4.4" data-reviews="180" data-sold="1700" data-stock="45" data-organic="False" data-essential="True" data-isNew="False" data-desc="Removes tough stains in a single wash. Suitable for machines." data-old-price="450" data-img-lg="https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;2 kg&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Laundry Detergent Powder"></article>
+    <article data-id="p42" data-name="Multi-Surface Cleaner" data-cat="household" data-brand="SparkleHome" data-unit="500 ml" data-price="149" data-rating="4.3" data-reviews="86" data-sold="980" data-stock="38" data-organic="False" data-essential="False" data-isNew="False" data-desc="Kills 99.9% of germs on kitchen and bathroom surfaces." data-old-price="" data-img-lg="https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;500 ml&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Multi-Surface Cleaner"></article>
+    <article data-id="p43" data-name="Kitchen Paper Towels" data-cat="household" data-brand="SparkleHome" data-unit="4 rolls" data-price="220" data-rating="4.4" data-reviews="64" data-sold="760" data-stock="2" data-organic="False" data-essential="True" data-isNew="False" data-desc="Extra-absorbent, 2-ply kitchen towels." data-old-price="250" data-img-lg="https://images.unsplash.com/photo-1584556812952-905ffd0c611a?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;4 rolls&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1584556812952-905ffd0c611a?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Kitchen Paper Towels"></article>
+    <article data-id="p44" data-name="Hand Wash Refill" data-cat="household" data-brand="SparkleHome" data-unit="750 ml" data-price="149" data-rating="4.6" data-reviews="120" data-sold="1300" data-stock="58" data-organic="False" data-essential="False" data-isNew="True" data-desc="Gentle aloe vera hand wash refill pack." data-old-price="180" data-img-lg="https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" data-units="[{&quot;label&quot;:&quot;750 ml&quot;,&quot;mult&quot;:1}]"><img src="https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?auto=format&amp;fit=crop&amp;w=600&amp;q=75" alt="Hand Wash Refill"></article>
+</div>
+
+<script src="../assets/js/products.js" defer></script>
+  <script src="../assets/js/cart.js" defer></script>
+  <script src="../assets/js/wishlist.js" defer></script>
+  <script src="../assets/js/validation.js" defer></script>
+  <script src="../assets/js/dashboard.js" defer></script>
+</body>
+</html>
